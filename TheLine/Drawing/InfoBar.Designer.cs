@@ -1,6 +1,6 @@
 ﻿namespace TheLine.Drawing
 {
-    partial class Segment2
+    partial class InfoBar
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // InfoBar
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "InfoBar";
+            this.Size = new System.Drawing.Size(598, 52);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

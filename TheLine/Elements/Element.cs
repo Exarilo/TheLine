@@ -22,6 +22,5 @@ namespace TheLine
             Type = type;
             Name = name;
         }
-        public abstract Color GetColor();
     }
 }

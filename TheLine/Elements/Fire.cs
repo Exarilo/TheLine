@@ -5,9 +5,5 @@ namespace TheLine.Elements
     {
         public Fire() : base(ElementType.Fire, "Fire") { }
 
-        public override Color GetColor()
-        {
-            return Color.Red;
-        }
     }
 }

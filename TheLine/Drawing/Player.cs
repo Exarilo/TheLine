@@ -6,8 +6,8 @@ namespace TheLine
     {
         private int HP;
 
-        public Player(int segmentWidth, int segmentHeight, int segmentSpacing, int hp)
-            : base(segmentWidth, segmentHeight, segmentSpacing, hp)
+        public Player(int segmentWidth, int segmentHeight, int hp)
+            : base(segmentWidth, segmentHeight, hp)
         {
             this.HP = hp; 
         }

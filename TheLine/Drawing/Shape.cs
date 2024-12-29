@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
-using TheLine.Elements;
 
 namespace TheLine.Drawing
 {
@@ -11,15 +9,14 @@ namespace TheLine.Drawing
         public List<Segment> segments;
         private int segmentWidth;
         private int segmentHeight;
-        private int segmentSpacing;
         private int lineLength;
+        public event Action<ElementType, ElementType> OnSegmentsChanged;
 
-        public Shape(int segmentWidth, int segmentHeight, int segmentSpacing, int lineLength)
+        public Shape(int segmentWidth, int segmentHeight, int lineLength)
         {
             this.DoubleBuffered = true;
             this.segmentWidth = segmentWidth;
             this.segmentHeight = segmentHeight;
-            this.segmentSpacing = segmentSpacing;
             this.lineLength = lineLength;
 
             segments = new List<Segment>();
@@ -36,7 +33,7 @@ namespace TheLine.Drawing
             for (int i = 0; i < lineLength; i++)
             {
                 Segment segment = new Segment(ElementType.None);
-
+                segment.SegmentChanged += (oldElementType, newElementType) =>{OnSegmentsChanged?.Invoke(oldElementType, newElementType);};
                 segment.Width = segmentWidth;
                 segment.Height = segmentHeight;
 

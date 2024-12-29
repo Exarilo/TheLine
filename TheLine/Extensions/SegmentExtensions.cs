@@ -26,13 +26,13 @@ namespace TheLine.Extensions
         }
         public static void ReplaceSegmentOfType(this IEnumerable<Segment> segments, Element elemToReplace, ElementType newElem) => segments.WhereElementTypeIs(elemToReplace.Type)?.ToList().ForEach(segment => segment.SetElement(newElem));
         
-        public static void ReplaceByType(this IEnumerable<Segment> segments, ElementType newElem) => segments?.ToList().ForEach(segment => segment.SetElement(newElem));
+        public static void ReplaceByType(this IEnumerable<Segment> segments, ElementType newElem) =>segments?.ToList().ForEach(segment => segment.SetElement(newElem));
 
         public static IEnumerable<Segment> WhereElementTypeIs(this IEnumerable<Segment> segments, ElementType elementType)=> segments.Where(segment => segment.CurrentElement.Type == elementType);
 
         public static IEnumerable<Segment> SelectNumberOfSegments(this IEnumerable<Segment> segments, int numberOfElements) =>segments.Take(numberOfElements);
         
-        public static int GetNumberOfElement(this IEnumerable<Segment> segments, Element element)=> segments.Count(segment => segment.CurrentElement == element);
+        public static int GetNumberOfElement(this IEnumerable<Segment> segments, ElementType element)=> segments.Count(segment => segment.CurrentElement.Type == element);
         
 
     }

@@ -1,6 +1,7 @@
-﻿using System.Drawing;
+﻿using System;
 using System.Windows.Forms;
 using TheLine.Elements;
+using TheLine.Extensions;
 
 namespace TheLine.Drawing
 {
@@ -8,6 +9,7 @@ namespace TheLine.Drawing
     {
         public Element CurrentElement { get; private set; }
 
+        public event Action<ElementType, ElementType> SegmentChanged;
         public Segment(ElementType elementType)
         {
             InitializeComponent();
@@ -16,8 +18,10 @@ namespace TheLine.Drawing
 
         public void SetElement(ElementType elementType)
         {
+            ElementType oldElementType = CurrentElement?.Type ?? ElementType.None;
             CurrentElement = ElementFactory.CreateElement(elementType);
-            this.BackColor = CurrentElement.GetColor();
+            this.BackColor = elementType.GetColor();
+            SegmentChanged?.Invoke(oldElementType, elementType);
         }
     }
 }

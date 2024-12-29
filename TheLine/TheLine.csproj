@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Drawing\InfoBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Drawing\InfoBar.Designer.cs">
+      <DependentUpon>InfoBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drawing\Player.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -55,19 +61,13 @@
     <Compile Include="Drawing\Segment.Designer.cs">
       <DependentUpon>Segment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Drawing\Segment2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Drawing\Segment2.Designer.cs">
-      <DependentUpon>Segment2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Drawing\Shape.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ElemCounter.cs">
+    <Compile Include="Drawing\ElemCounter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ElemCounter.Designer.cs">
+    <Compile Include="Drawing\ElemCounter.Designer.cs">
       <DependentUpon>ElemCounter.cs</DependentUpon>
     </Compile>
     <Compile Include="Elements\ElementFactory.cs" />
@@ -78,6 +78,7 @@
     <Compile Include="Elements\Fire.cs" />
     <Compile Include="Elements\Poison.cs" />
     <Compile Include="Elements\Water.cs" />
+    <Compile Include="Extensions\ElementExtensions.cs" />
     <Compile Include="Extensions\SegmentExtensions.cs" />
     <Compile Include="Extensions\ShapeExtensions.cs" />
     <Compile Include="Main.cs">
@@ -88,7 +89,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ElemCounter.resx">
+    <EmbeddedResource Include="Drawing\InfoBar.resx">
+      <DependentUpon>InfoBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drawing\ElemCounter.resx">
       <DependentUpon>ElemCounter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">

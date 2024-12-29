@@ -41,7 +41,7 @@
             this.pbElemCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbElemCount.Location = new System.Drawing.Point(0, 0);
             this.pbElemCount.Name = "pbElemCount";
-            this.pbElemCount.Size = new System.Drawing.Size(150, 150);
+            this.pbElemCount.Size = new System.Drawing.Size(40, 40);
             this.pbElemCount.TabIndex = 0;
             this.pbElemCount.TabStop = false;
             // 
@@ -50,10 +50,10 @@
             this.lbNumberElem.BackColor = System.Drawing.Color.Transparent;
             this.lbNumberElem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbNumberElem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumberElem.ForeColor = System.Drawing.Color.White;
+            this.lbNumberElem.ForeColor = System.Drawing.Color.Black;
             this.lbNumberElem.Location = new System.Drawing.Point(0, 0);
             this.lbNumberElem.Name = "lbNumberElem";
-            this.lbNumberElem.Size = new System.Drawing.Size(150, 150);
+            this.lbNumberElem.Size = new System.Drawing.Size(40, 40);
             this.lbNumberElem.TabIndex = 2;
             this.lbNumberElem.Text = "100";
             this.lbNumberElem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -65,6 +65,7 @@
             this.Controls.Add(this.lbNumberElem);
             this.Controls.Add(this.pbElemCount);
             this.Name = "ElemCounter";
+            this.Size = new System.Drawing.Size(40, 40);
             ((System.ComponentModel.ISupportInitialize)(this.pbElemCount)).EndInit();
             this.ResumeLayout(false);
 

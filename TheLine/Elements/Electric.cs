@@ -6,9 +6,5 @@ namespace TheLine.Elements
     {
         public Electric() : base(ElementType.Electric, "Electric") { }
 
-        public override Color GetColor()
-        {
-            return Color.Yellow;
-        }
     }
 }
