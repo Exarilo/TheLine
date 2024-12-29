@@ -10,7 +10,7 @@ namespace TheLine
         {
             InitializeComponent();
             player.AddTo(panel1);
-            player.segments.WhereElementIs(Element.None).SelectNumberOfSegments(5).ReplaceByType(Element.Fire);
+            player.segments.WhereElementTypeIs(ElementType.None).SelectNumberOfSegments(5).ReplaceByType(ElementType.Fire);
     
 
 

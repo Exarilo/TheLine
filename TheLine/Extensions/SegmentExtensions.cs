@@ -8,11 +8,11 @@ namespace TheLine.Extensions
     public static class SegmentExtensions
     {
         //todo si pas assez de segments a remplacer
-        public static void ReplaceSegmentOfType(this IEnumerable<Segment> segments, Element elemToReplace, Element newElem, int numberOfElemToReplace)
+        public static void ReplaceSegmentOfType(this IEnumerable<Segment> segments, Element elemToReplace, ElementType newElem, int numberOfElemToReplace)
         {
             if (numberOfElemToReplace <= 0) return;
 
-            foreach (var segment in segments.WhereElementIs(elemToReplace))
+            foreach (var segment in segments.WhereElementTypeIs(elemToReplace.Type))
             {
                 segment.SetElement(newElem);
                 numberOfElemToReplace--;
@@ -24,11 +24,11 @@ namespace TheLine.Extensions
                 }
             }
         }
-        public static void ReplaceSegmentOfType(this IEnumerable<Segment> segments, Element elemToReplace, Element newElem) => segments.WhereElementIs(elemToReplace)?.ToList().ForEach(segment => segment.SetElement(newElem));
+        public static void ReplaceSegmentOfType(this IEnumerable<Segment> segments, Element elemToReplace, ElementType newElem) => segments.WhereElementTypeIs(elemToReplace.Type)?.ToList().ForEach(segment => segment.SetElement(newElem));
         
-        public static void ReplaceByType(this IEnumerable<Segment> segments, Element newElem) => segments?.ToList().ForEach(segment => segment.SetElement(newElem));
+        public static void ReplaceByType(this IEnumerable<Segment> segments, ElementType newElem) => segments?.ToList().ForEach(segment => segment.SetElement(newElem));
 
-        public static IEnumerable<Segment> WhereElementIs(this IEnumerable<Segment> segments, Element element)=> segments.Where(segment => segment.CurrentElement == element);
+        public static IEnumerable<Segment> WhereElementTypeIs(this IEnumerable<Segment> segments, ElementType elementType)=> segments.Where(segment => segment.CurrentElement.Type == elementType);
 
         public static IEnumerable<Segment> SelectNumberOfSegments(this IEnumerable<Segment> segments, int numberOfElements) =>segments.Take(numberOfElements);
         

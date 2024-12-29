@@ -64,8 +64,20 @@
     <Compile Include="Drawing\Shape.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Element.cs" />
-    <Compile Include="Extensions\ElementExtensions.cs" />
+    <Compile Include="ElemCounter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElemCounter.Designer.cs">
+      <DependentUpon>ElemCounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elements\ElementFactory.cs" />
+    <Compile Include="Elements\NoElem.cs" />
+    <Compile Include="Elements\Earth.cs" />
+    <Compile Include="Elements\Electric.cs" />
+    <Compile Include="Elements\Element.cs" />
+    <Compile Include="Elements\Fire.cs" />
+    <Compile Include="Elements\Poison.cs" />
+    <Compile Include="Elements\Water.cs" />
     <Compile Include="Extensions\SegmentExtensions.cs" />
     <Compile Include="Extensions\ShapeExtensions.cs" />
     <Compile Include="Main.cs">
@@ -76,6 +88,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ElemCounter.resx">
+      <DependentUpon>ElemCounter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +102,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ElementCount.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

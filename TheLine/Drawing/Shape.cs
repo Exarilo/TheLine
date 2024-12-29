@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using TheLine.Elements;
 
 namespace TheLine.Drawing
 {
@@ -34,7 +35,7 @@ namespace TheLine.Drawing
             flowLayoutPanel.AutoSize = true;
             for (int i = 0; i < lineLength; i++)
             {
-                Segment segment = new Segment(Element.None);
+                Segment segment = new Segment(ElementType.None);
 
                 segment.Width = segmentWidth;
                 segment.Height = segmentHeight;
