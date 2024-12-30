@@ -1,30 +1,38 @@
-﻿using System.Windows.Forms;
-using TheLine.Drawing;
+﻿using System;
+using System.Windows.Forms;
 using TheLine.Extensions;
 
 namespace TheLine
 {
     public partial class ElemCounter : UserControl
     {
-        public ElemCounter(Shape shape, ElementType elementType)
+        private Character player;
+        private ElementType elementType;
+
+        public ElemCounter()
         {
             InitializeComponent();
+        }
+
+        public ElemCounter(Character player, ElementType elementType)
+        {
+            InitializeComponent();
+            this.player = player;
+            this.elementType = elementType;
+
             lbNumberElem.Parent = pbElemCount;
             pbElemCount.BackColor = elementType.GetColor();
-            lbNumberElem.Text = shape.segments.GetNumberOfElement(elementType).ToString();
+            lbNumberElem.Text = "0";
 
-            shape.OnSegmentsChanged += (oldElementType, newElementType) =>
+            player.OnElementChanged += Player_OnElementChanged;
+        }
+
+        private void Player_OnElementChanged(ElementType oldElement, ElementType newElement)
+        {
+            if (newElement == elementType)
             {
-                if (elementType == oldElementType)
-                {
-                    lbNumberElem.Text = (int.Parse(lbNumberElem.Text) - 1).ToString();
-                }
-                if (elementType == newElementType)
-                {
-                    lbNumberElem.Text = (int.Parse(lbNumberElem.Text) + 1).ToString();
-                }
-                return;
-            };
+                lbNumberElem.Text = player.Elements[elementType].ToString();
+            }
         }
     }
 }

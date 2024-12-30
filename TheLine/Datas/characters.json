@@ -1,0 +1,31 @@
+﻿[
+  {
+    "Name": "Vampire",
+    "HP": 100,
+    "ImageFileName": "Perso1.png",
+    "Effects": [
+      {
+        "Type": "HealthDrain",
+        "Description": "Sacrifice 2% of life every turn."
+      }
+    ],
+    "Elements": {
+      "Fire": 0,
+      "Water": 10
+    }
+  },
+  {
+    "Name": "Golem",
+    "HP": 150,
+    "ImageFileName": "Perso2.png",
+    "Effects": [
+      {
+        "Type": "DamageReduction",
+        "Description": "Reduces damage by 20%."
+      }
+    ],
+    "Elements": {
+      "Earth": 5
+    }
+  }
+]

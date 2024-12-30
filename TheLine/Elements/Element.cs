@@ -16,7 +16,6 @@ namespace TheLine
     {
         public ElementType Type { get; }
         public string Name { get; }
-
         protected Element(ElementType type, string name)
         {
             Type = type;
