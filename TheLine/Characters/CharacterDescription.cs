@@ -13,7 +13,8 @@ namespace TheLine
         {
             InitializeComponent();
             pbCharImg.BackgroundImage = character.GetImage();
-            lbDescription.Text = "character.Description";
+            string description = string.Join(Environment.NewLine, character.Effects.Select(effect => effect.Description)); //todo richtextbox avec couleur sur elements
+            lbDescription.Text = description;
 
             foreach (Control control in this.Controls)
             {

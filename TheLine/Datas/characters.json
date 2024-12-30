@@ -6,12 +6,15 @@
     "Effects": [
       {
         "Type": "HealthDrain",
-        "Description": "Sacrifice 2% of life every turn."
+        "Description": "Sacrifice 2% of life every turn. Win 10% lifesteal"
       }
     ],
     "Elements": {
       "Fire": 0,
-      "Water": 10
+      "Water": 10,
+      "Earth": 0,
+      "Electric": 0,
+      "Poison": 0
     }
   },
   {
@@ -25,7 +28,11 @@
       }
     ],
     "Elements": {
-      "Earth": 5
+      "Fire": 0,
+      "Water": 0,
+      "Earth": 5,
+      "Electric": 0,
+      "Poison": 0
     }
   }
 ]

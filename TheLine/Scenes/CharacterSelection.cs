@@ -12,8 +12,6 @@ namespace TheLine
         public CharacterSelection()
         {
             InitializeComponent();
-            //InitCharacters();
-
             characterList = CharacterLoader.LoadCharacters("characters.json");
             characterList.ForEach(character => AddCharacter(character));
         }
@@ -22,6 +20,7 @@ namespace TheLine
             CharacterDescription characterDescription = new CharacterDescription(character);
             characterDescription.Dock = DockStyle.Top;
             panelCharacters.Controls.Add(characterDescription);
+            //todo check click Play before
             characterDescription.OnSelection += (s, e) =>
             {
                 NewRun newRun = new NewRun(character);

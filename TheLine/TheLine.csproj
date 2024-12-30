@@ -57,10 +57,10 @@
       <DependentUpon>CharacterDescription.cs</DependentUpon>
     </Compile>
     <Compile Include="Characters\CharacterLoader.cs" />
-    <Compile Include="Characters\CharacterSelection.cs">
+    <Compile Include="Scenes\CharacterSelection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Characters\CharacterSelection.Designer.cs">
+    <Compile Include="Scenes\CharacterSelection.Designer.cs">
       <DependentUpon>CharacterSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="Drawing\ElemCounter.cs">
@@ -80,23 +80,22 @@
     <Compile Include="Elements\Poison.cs" />
     <Compile Include="Elements\Water.cs" />
     <Compile Include="Extensions\ElementExtensions.cs" />
-    <Compile Include="IntroMenu.cs">
+    <Compile Include="Scenes\IntroMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IntroMenu.Designer.cs">
+    <Compile Include="Scenes\IntroMenu.Designer.cs">
       <DependentUpon>IntroMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewRun.cs">
+    <Compile Include="Scenes\NewRun.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewRun.Designer.cs">
+    <Compile Include="Scenes\NewRun.Designer.cs">
       <DependentUpon>NewRun.cs</DependentUpon>
     </Compile>
-    <Compile Include="Player.cs" />
-    <Compile Include="PlayerBoard.cs">
+    <Compile Include="Drawing\PlayerBoard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PlayerBoard.Designer.cs">
+    <Compile Include="Drawing\PlayerBoard.Designer.cs">
       <DependentUpon>PlayerBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -104,19 +103,19 @@
     <EmbeddedResource Include="Characters\CharacterDescription.resx">
       <DependentUpon>CharacterDescription.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Characters\CharacterSelection.resx">
+    <EmbeddedResource Include="Scenes\CharacterSelection.resx">
       <DependentUpon>CharacterSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drawing\ElemCounter.resx">
       <DependentUpon>ElemCounter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IntroMenu.resx">
+    <EmbeddedResource Include="Scenes\IntroMenu.resx">
       <DependentUpon>IntroMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewRun.resx">
+    <EmbeddedResource Include="Scenes\NewRun.resx">
       <DependentUpon>NewRun.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PlayerBoard.resx">
+    <EmbeddedResource Include="Drawing\PlayerBoard.resx">
       <DependentUpon>PlayerBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -146,9 +145,7 @@
   <ItemGroup>
     <None Include="Resources\ElementCount.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scenes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Perso1.png" />
   </ItemGroup>

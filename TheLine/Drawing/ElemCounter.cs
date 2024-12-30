@@ -22,16 +22,23 @@ namespace TheLine
 
             lbNumberElem.Parent = pbElemCount;
             pbElemCount.BackColor = elementType.GetColor();
-            lbNumberElem.Text = "0";
-
+            lbNumberElem.Text = player.Elements.TryGetValue(elementType, out int value) ? value.ToString() : "0";
             player.OnElementChanged += Player_OnElementChanged;
         }
 
+
         private void Player_OnElementChanged(ElementType oldElement, ElementType newElement)
         {
-            if (newElement == elementType)
+            if (newElement == elementType || oldElement == elementType)
             {
-                lbNumberElem.Text = player.Elements[elementType].ToString();
+                if (player.Elements.TryGetValue(elementType, out int value))
+                {
+                    lbNumberElem.Text = value.ToString();
+                }
+                else
+                {
+                    lbNumberElem.Text = "0";
+                }
             }
         }
     }

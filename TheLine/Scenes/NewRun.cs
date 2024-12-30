@@ -46,12 +46,12 @@ namespace TheLine
 
         private void button1_Click(object sender, EventArgs e)
         {
-            selectedCharacter.ChangeElement(ElementType.Fire, ElementType.Water, 5);
+            selectedCharacter.ChangeElement(ElementType.Water, ElementType.Fire, 5);
         }
 
         private void button2_Click(object sender, System.EventArgs e)
         {
-           // player.segments.WhereElementTypeIs(ElementType.None).SelectNumberOfSegments(5).ReplaceByType(ElementType.Water);
+            selectedCharacter.ChangeElement(ElementType.Fire, ElementType.Water, 5);
         }
     }
 }

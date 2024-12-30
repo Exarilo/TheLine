@@ -7,6 +7,7 @@ using TheLine.Elements;
 using TheLine;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Linq;
 
 public class Character
 {
@@ -25,7 +26,9 @@ public class Character
         HP = hp;
         ImageFileName = imageFileName;
         Effects = effects ?? new List<Effect>();
-        Elements = new Dictionary<ElementType, int>();
+        Elements = Enum.GetValues(typeof(ElementType))
+                       .Cast<ElementType>()
+                       .ToDictionary(e => e, e => 0);
     }
 
     public Image GetImage()
@@ -38,11 +41,17 @@ public class Character
 
     public void ChangeElement(ElementType oldElement, ElementType newElement, int changeValue)
     {
+        int todo = 0; //todo;
         if (Elements.ContainsKey(oldElement))
         {
             Elements[oldElement] -= changeValue;
-            if (Elements[oldElement] <= 0)
-                Elements.Remove(oldElement);
+
+            if (Elements[oldElement] < 0)
+                todo = 0; //todo;
+        }
+        else
+        {
+            Elements[oldElement] = 0;
         }
 
         if (Elements.ContainsKey(newElement))
@@ -56,4 +65,5 @@ public class Character
 
         OnElementChanged?.Invoke(oldElement, newElement);
     }
+
 }
